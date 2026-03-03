@@ -18,7 +18,7 @@ def plot_corr(df, feature_names, dataset_name):
 
     plt.colorbar(label="Correlation")
     plt.tight_layout()
-    plt.savefig(rf"c{dataset_name}_corr.png")
+    plt.savefig(rf"./output/{dataset_name}_corr.png")
     plt.show()
 
 
