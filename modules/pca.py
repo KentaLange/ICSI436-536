@@ -20,7 +20,7 @@ def compute_pca(x_scaled, dataset_name):
     plt.ylabel("Cumulative Explained Variance")
     plt.title(f"{dataset_name} - PCA: Cumulative Explained Variance")
     plt.ylim(0, 1.05)
-    plt.savefig(rf"C:\Users\patelka\OneDrive - State University of New York\Desktop\ICSI_536\output\{dataset_name}_pca_variance.png")
+    plt.savefig(rf"./output/{dataset_name}_pca_variance.png")
     plt.show()
 
     # 2D projection
@@ -31,5 +31,5 @@ def compute_pca(x_scaled, dataset_name):
     plt.xlabel("PC1")
     plt.ylabel("PC2")
     plt.title(f"{dataset_name} - PCA-2D Projection")
-    plt.savefig(rf"C:\Users\patelka\OneDrive - State University of New York\Desktop\ICSI_536\output\{dataset_name}_pca_2d.png")
+    plt.savefig(rf"./output/{dataset_name}_pca_2d.png")
     plt.show()
