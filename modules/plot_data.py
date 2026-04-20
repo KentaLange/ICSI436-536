@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import matplotlib
 
-matplotlib.use('TkAgg')
+matplotlib.use('MacOSX')
 
 def plot_corr(df, feature_names, dataset_name):
     corr = df[feature_names].corr().to_numpy()
@@ -18,7 +18,7 @@ def plot_corr(df, feature_names, dataset_name):
 
     plt.colorbar(label="Correlation")
     plt.tight_layout()
-    plt.savefig(rf"C:\Users\patelka\OneDrive - State University of New York\Desktop\ICSI_536\ICSI436-536\output\{dataset_name}_corr.png")
+    plt.savefig(f"output/{dataset_name}_corr.png")
     plt.show()
 
 

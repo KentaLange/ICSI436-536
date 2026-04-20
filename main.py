@@ -3,8 +3,10 @@ from modules.load_data import get_iris_data_set, get_blob_dataset, get_moons_dat
 from modules.standardize import standardize_data
 from modules.plot_data import plot_corr
 from modules.pca import compute_pca
+from modules.clustering import compare_clustering
 
 if __name__ == "__main__":
+    """
     #      Iris Dataset     #
     df_iris, iris = get_iris_data_set()
     standard_iris_df = standardize_data(df_iris)
@@ -44,16 +46,30 @@ if __name__ == "__main__":
         x_scaled=df_moons,
         dataset_name="Moon"
     )
+    """
 
     #    Wine Dataset    #
     df_wine = get_wine_dataset()
     wine_feature_names = list(df_wine.columns)
+    
+    # Standardize data before PCA processing
+    standard_wine_df = standardize_data(df_wine)
+    
     plot_corr(
         df=df_wine,
         feature_names=wine_feature_names,
         dataset_name="Wine"
     )
-    compute_pca(
-        x_scaled=df_wine,
+    
+    wine_pca_3d = compute_pca(
+        x_scaled=standard_wine_df,
         dataset_name="Wine"
     )
+    
+    if wine_pca_3d is not None:
+        compare_clustering(
+            original_data=standard_wine_df,
+            pca_data=wine_pca_3d,
+            dataset_name="Wine",
+            n_clusters=3
+        )
